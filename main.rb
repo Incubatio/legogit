@@ -69,10 +69,10 @@ when "notify"
     irc.send "NOTICE #{$channel} :------------------------ #{ARGV[2]} -----------------------------=>"
     sleep(0.5)
     ARGV[1].split("\n").each do |line|
-        irc.send "NOTICE #{$channel} :-- %" + line.gsub('incubaton', 'incubat0n')
+        irc.send "NOTICE #{$channel} :-- % #{line}"
         sleep(0.5)
     end
-    irc.send "NOTICE #{$channel} :<=-------------------)-(o" + "_" * ARGV[2].length + "O)-(--------------------------#"
+    irc.send "NOTICE #{$channel} :<=-------------------)-(o" + "_" * ARGV[2].length + "O)-(---------------------------#"
 
 else
     usage
