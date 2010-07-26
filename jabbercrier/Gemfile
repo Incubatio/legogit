@@ -1,0 +1,4 @@
+source :gemcutter
+
+#gem "jabber-bot"
+gem "xmpp4r-simple"

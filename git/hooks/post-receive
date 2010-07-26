@@ -1,0 +1,13 @@
+#!/bin/sh 
+ 
+COMMITS=$(git rev-list $1 $2 | wc -l) 
+COMMITS_REV=`expr $COMMITS - 1` 
+
+AUTHOR=$(git show $2 | grep Author) 
+LOGS=$(git log -$COMMITS_REV --oneline) 
+
+MSG="For $3 rev $1->rev $2 
+$AUTHOR 
+$LOGS" 
+
+ruby $HOME/Admin/ruby/legogit/main.rb notify "$MSG" "PUSH" 
